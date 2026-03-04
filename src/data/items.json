@@ -1,12 +1,82 @@
 [
   {
-    "name": "Objeto 1",
-    "description": "Descripción 1",
-    "id": 1
+    "id": 1,
+    "name": "Base de Maquillaje HD",
+    "description": "Base líquida de cobertura total con acabado mate. Formulada con ácido hialurónico para hidratar mientras cubres. Ideal para pieles mixtas y grasas. Dura hasta 24 horas sin retoque.",
+    "category": "Base",
+    "price": 85000,
+    "stock": 20,
+    "rarity": "Bestseller",
+    "date": "2024-01-10"
   },
   {
-    "name": "Objeto 2",
-    "description": "Descripción 2",
-    "id": 2
+    "id": 2,
+    "name": "Paleta de Sombras Golden Hour",
+    "description": "12 tonos cálidos en acabados matte, shimmer y glitter. Pigmentación intensa y larga duración. Perfecta para looks de día y noche con tonos terrosos, cobrizos y dorados.",
+    "category": "Ojos",
+    "price": 120000,
+    "stock": 15,
+    "rarity": "Edición Limitada",
+    "date": "2024-02-14"
+  },
+  {
+    "id": 3,
+    "name": "Labial Mate Terciopelo",
+    "description": "Labial líquido de fórmula ultramatte que no reseca. Coloración intensa en un solo paso. Disponible en tono Berry Red, un rojo frambuesa perfecto para cualquier ocasión.",
+    "category": "Labios",
+    "price": 45000,
+    "stock": 35,
+    "rarity": "Clásico",
+    "date": "2024-03-01"
+  },
+  {
+    "id": 4,
+    "name": "Rubor en Polvo Peach Glow",
+    "description": "Rubor sedoso con micropartículas de luz que dan un acabado saludable y luminoso. Tono melocotón rosado que favorece todo tipo de tono de piel.",
+    "category": "Rostro",
+    "price": 58000,
+    "stock": 18,
+    "rarity": "Bestseller",
+    "date": "2024-03-20"
+  },
+  {
+    "id": 5,
+    "name": "Máscara de Pestañas Volumen XXL",
+    "description": "Máscara con cepillo de doble cara que alarga, curva y multiplica el volumen de las pestañas. Fórmula resistente al agua y al sudor. Efecto pestañas postizas sin ir al salón.",
+    "category": "Ojos",
+    "price": 62000,
+    "stock": 25,
+    "rarity": "Clásico",
+    "date": "2024-04-05"
+  },
+  {
+    "id": 6,
+    "name": "Corrector Iluminador Silk Touch",
+    "description": "Corrector de textura cremosa que cubre ojeras y manchas con acabado luminoso. Enriquecido con vitamina C y colágeno. Se difumina fácilmente con los dedos o esponja.",
+    "category": "Base",
+    "price": 52000,
+    "stock": 22,
+    "rarity": "Nuevo",
+    "date": "2024-05-18"
+  },
+  {
+    "id": 7,
+    "name": "Contorno y Bronzer Duo",
+    "description": "Compacto doble con polvo de contorno y bronzer. Define el rostro y aporta un bronceado natural. Espejo incluido. Fórmula sin talco, apta para pieles sensibles.",
+    "category": "Rostro",
+    "price": 95000,
+    "stock": 10,
+    "rarity": "Edición Limitada",
+    "date": "2024-06-01"
+  },
+  {
+    "id": 8,
+    "name": "Spray Fijador de Maquillaje",
+    "description": "Fijador en spray que prolonga la duración del maquillaje hasta 16 horas. Con extracto de aloe vera para refrescar la piel. No obstruye los poros ni deja sensación pegajosa.",
+    "category": "Fijador",
+    "price": 38000,
+    "stock": 40,
+    "rarity": "Esencial",
+    "date": "2024-06-15"
   }
 ]

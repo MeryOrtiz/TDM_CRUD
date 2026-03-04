@@ -1,25 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — Glam Store</title>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Gestión</a></li>
-            <li><a href="catalog.html">Catálogo</a></li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <span class="navbar-brand">💄 Glam Store</span>
+    <ul>
+      <li><a href="index.html">Gestión</a></li>
+      <li><a href="catalog.html" class="active">Catálogo</a></li>
+    </ul>
+  </nav>
 
-    <h1>Catálogo de Items</h1>
+  <div class="page-header">
+    <h1>Nuestros Productos</h1>
+    <p>Descubre toda nuestra línea de maquillaje</p>
+  </div>
 
+  <div class="catalog-wrapper">
     <div id="catalogContainer" class="catalog-grid">
-        <!-- Aquí se van a renderizar las tarjetas con los items -->
+      <div class="loading">Cargando productos...</div>
     </div>
+  </div>
 
-    <script type="module" src="./js/catalog.js"></script>
+  <!-- MODAL DE DETALLE -->
+  <div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title-area">
+          <span class="modal-title" id="modalName">—</span>
+          <span id="modalBadge"></span>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-icon" id="modalIcon">💄</div>
+      <div class="modal-body">
+        <p class="modal-description" id="modalDescription">—</p>
+        <div class="modal-stats">
+          <div class="stat-item">
+            <div class="stat-label">💰 Precio</div>
+            <div class="stat-value price" id="modalPrice">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">📦 Stock</div>
+            <div class="stat-value" id="modalStock">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">🗂️ Categoría</div>
+            <div class="stat-value" id="modalCategory">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">📅 Fecha</div>
+            <div class="stat-value" id="modalDate">—</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal-close" id="modalCloseBtn">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/catalog.js"></script>
 </body>
 </html>

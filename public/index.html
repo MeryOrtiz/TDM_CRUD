@@ -1,39 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión</title>
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión — Glam Store</title>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Gestión</a></li>
-            <li><a href="catalog.html">Catálogo</a></li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <span class="navbar-brand">💄 Glam Store</span>
+    <ul>
+      <li><a href="index.html" class="active">Gestión</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+    </ul>
+  </nav>
 
-    <h1>Gestión de Items</h1>
+  <div class="page-header">
+    <h1>Gestión de Productos</h1>
+    <p>Administra el inventario de tu tienda de maquillaje</p>
+  </div>
 
-    <form id="itemForm">
-        <input type="text" id="name" placeholder="Nombre del item" required>
-        <input type="text" id="description" placeholder="Descripción">
-        <button type="submit" id="submitBtn">Agregar</button>
-    </form>
+  <div class="management-container">
+    <div class="form-card">
+      <h2 id="formTitle">✨ Nuevo Producto</h2>
+      <form id="itemForm">
+        <input type="text" id="name" placeholder="Nombre del producto" required>
+        <select id="category">
+          <option value="">Categoría...</option>
+          <option value="Base">Base</option>
+          <option value="Ojos">Ojos</option>
+          <option value="Labios">Labios</option>
+          <option value="Rostro">Rostro</option>
+          <option value="Fijador">Fijador</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <input type="number" id="price" placeholder="Precio (COP $)" min="0" required>
+        <input type="number" id="stock" placeholder="Unidades disponibles" min="0" required>
+        <select id="rarity">
+          <option value="">Etiqueta...</option>
+          <option value="Nuevo">Nuevo</option>
+          <option value="Clásico">Clásico</option>
+          <option value="Bestseller">Bestseller</option>
+          <option value="Edición Limitada">Edición Limitada</option>
+          <option value="Esencial">Esencial</option>
+        </select>
+        <input type="date" id="date">
+        <textarea id="description" placeholder="Descripción del producto" class="full-width"></textarea>
+        <button type="submit" id="submitBtn" class="full-width">Agregar Producto</button>
+      </form>
+    </div>
 
-    <table>
+    <div class="table-card">
+      <table>
         <thead>
-            <tr>
+          <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Etiqueta</th>
             <th>Acciones</th>
-            </tr>
+          </tr>
         </thead>
         <tbody id="itemsTable"></tbody>
-    </table>
+      </table>
+    </div>
+  </div>
 
-    <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
