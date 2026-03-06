@@ -1,14 +1,14 @@
-const CATEGORY_ICONS = {
-  "Base":     "🫧",
-  "Ojos":     "👁️",
-  "Labios":   "💋",
-  "Rostro":   "✨",
-  "Fijador":  "💨",
-  "Otro":     "💄"
+const CATEGORY_IMAGES = {
+  "Base":    "https://www.shutterstock.com/image-illustration/liquid-makeup-foundation-bottle-cosmetic-600nw-2600539727.jpg",
+  "Ojos":    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMeRPYLY3_p882l3iBkuu2Pu_I3bP3dUHrxg&s",
+  "Labios":  "https://png.pngtree.com/png-clipart/20240715/original/pngtree-beauty-lipstick-makeup-cartoon-png-image_15563295.png",
+  "Rostro":  "https://previews.123rf.com/images/vaselena/vaselena2008/vaselena200800003/153570663-face-of-woman-without-makeup-and-many-various-beauty-products-around-concept-of-creating-beautiful.jpg",
+  "Fijador": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSidFodch1EQPC8oo6lSujcnnso6bbgNYKhSQ&s",
+  "Otro":    "https://thumbs.dreamstime.com/z/elementos-de-maquillaje-ilustraci%C3%B3n-estilo-dibujo-dibujos-animados-simple-arte-digital-d-280661388.jpg"
 };
 
 export function getCategoryIcon(category) {
-  return CATEGORY_ICONS[category] || "💄";
+  return CATEGORY_IMAGES[category] || "";
 }
 
 export function renderItems(items, tableBody) {
@@ -39,7 +39,7 @@ export function resetForm(form, submitBtn) {
   form.reset();
   if (submitBtn) {
     submitBtn.textContent = "Agregar Producto";
-    document.getElementById("formTitle").textContent = "✨ Nuevo Producto";
+    document.getElementById("formTitle").textContent = "Nuevo Producto";
   }
 }
 

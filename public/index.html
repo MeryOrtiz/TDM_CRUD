@@ -3,71 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión — MJP Store</title>
+  <title>Gestión — JM Store</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <span class="navbar-brand">MJP Store</span>
-    <ul>
-      <li><a href="index.html" class="active">Gestión</a></li>
-      <li><a href="catalog.html">Catálogo</a></li>
-    </ul>
-  </nav>
-
-  <div class="page-header">
-    <h1>Gestión de Productos</h1>
-    <p>Administra el inventario de tu tienda de maquillaje</p>
+  <div id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-content">
+      <div class="welcome-logo">JM STORE</div>
+      <p class="welcome-subtitle">¿Qué deseas hacer hoy?</p>
+      <div class="welcome-actions">
+        <button class="welcome-btn" id="btnAgregar">
+          <span class="welcome-btn-icon">➕</span>
+          <span class="welcome-btn-label">Agregar Producto</span>
+          <span class="welcome-btn-desc">Registra un nuevo producto</span>
+        </button>
+        <button class="welcome-btn" id="btnStock">
+          <span class="welcome-btn-icon">📦</span>
+          <span class="welcome-btn-label">Stock</span>
+          <span class="welcome-btn-desc">Consulta y edita el inventario</span>
+        </button>
+        <button class="welcome-btn" id="btnCatalogo">
+          <span class="welcome-btn-icon">🛍️</span>
+          <span class="welcome-btn-label">Catálogo</span>
+          <span class="welcome-btn-desc">Ver productos publicados</span>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <div class="management-container">
-    <div class="form-card">
-      <h2 id="formTitle">Nuevo Producto</h2>
-      <form id="itemForm">
-        <input type="text" id="name" placeholder="Nombre del producto" required>
-        <select id="category">
-          <option value="">Categoría...</option>
-          <option value="Base">Base</option>
-          <option value="Ojos">Ojos</option>
-          <option value="Labios">Labios</option>
-          <option value="Rostro">Rostro</option>
-          <option value="Fijador">Fijador</option>
-          <option value="Otro">Otro</option>
-        </select>
-        <input type="number" id="price" placeholder="Precio (COP $)" min="0" required>
-        <input type="number" id="stock" placeholder="Unidades disponibles" min="0" required>
-        <select id="rarity">
-          <option value="">Etiqueta...</option>
-          <option value="Nuevo">Nuevo</option>
-          <option value="Clásico">Clásico</option>
-          <option value="Bestseller">Bestseller</option>
-          <option value="Edición Limitada">Edición Limitada</option>
-          <option value="Esencial">Esencial</option>
-        </select>
-        <input type="date" id="date">
-        <textarea id="description" placeholder="Descripción del producto" class="full-width"></textarea>
-        <button type="submit" id="submitBtn" class="full-width">Agregar Producto</button>
-      </form>
+  <div id="managementContent" class="management-hidden">
+    <div class="page-header">
+      <button class="btn-back" id="btnBack">← Volver</button>
+      <h1 id="sectionTitle">Gestión de Productos</h1>
     </div>
 
-    <div class="table-card">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Etiqueta</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="itemsTable"></tbody>
-      </table>
+    <div class="management-container">
+      <!-- FORMULARIO (solo visible en modo Agregar) -->
+      <div class="form-card" id="formSection">
+        <h2 id="formTitle">Nuevo Producto</h2>
+        <form id="itemForm">
+          <input type="text" id="name" placeholder="Nombre del producto" required>
+          <select id="category">
+            <option value="">Categoría...</option>
+            <option value="Base">Base</option>
+            <option value="Ojos">Ojos</option>
+            <option value="Labios">Labios</option>
+            <option value="Rostro">Rostro</option>
+            <option value="Fijador">Fijador</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <input type="number" id="price" placeholder="Precio" min="0" required>
+          <input type="number" id="stock" placeholder="Unidades disponibles" min="0" required>
+          <select id="rarity">
+            <option value="">Etiqueta...</option>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Clásico">Clásico</option>
+            <option value="Bestseller">Bestseller</option>
+            <option value="Edición Limitada">Edición Limitada</option>
+            <option value="Esencial">Esencial</option>
+          </select>
+          <input type="date" id="date">
+          <textarea id="description" placeholder="Descripción del producto" class="full-width"></textarea>
+          <button type="submit" id="submitBtn" class="full-width">Agregar Producto</button>
+        </form>
+      </div>
+
+      <div class="table-card" id="tableSection">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Etiqueta</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="itemsTable"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <script type="module" src="./js/main.js"></script>
+  <script>
+    const welcomeScreen      = document.getElementById("welcomeScreen");
+    const managementContent  = document.getElementById("managementContent");
+    const formSection        = document.getElementById("formSection");
+    const tableSection       = document.getElementById("tableSection");
+    const sectionTitle       = document.getElementById("sectionTitle");
+    const btnBack            = document.getElementById("btnBack");
+
+    function showSection(mode) {
+      welcomeScreen.classList.add("hidden");
+      managementContent.classList.remove("management-hidden");
+
+      if (mode === "agregar") {
+        sectionTitle.textContent = "Agregar Producto";
+        formSection.style.display  = "block";
+        tableSection.style.display = "none";
+      } else if (mode === "stock") {
+        sectionTitle.textContent = "Gestión de Stock";
+        formSection.style.display  = "none";
+        tableSection.style.display = "block";
+      }
+    }
+
+    document.getElementById("btnAgregar").addEventListener("click", () => showSection("agregar"));
+    document.getElementById("btnStock").addEventListener("click",   () => showSection("stock"));
+    document.getElementById("btnCatalogo").addEventListener("click", () => {
+      window.location.href = "catalog.html";
+    });
+
+    btnBack.addEventListener("click", () => {
+      managementContent.classList.add("management-hidden");
+      welcomeScreen.classList.remove("hidden");
+    });
+  </script>
 </body>
 </html>
